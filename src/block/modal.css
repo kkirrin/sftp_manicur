@@ -1,0 +1,30 @@
+.modal-wrapper {
+    position: absolute;
+    z-index: 1000;
+    top: 90px;
+    transition: all 0.5s;
+    background-color: white;
+    border-radius: 8px;
+    /* border: 1px solid black; */
+    /* box-shadow: 10px 4px 6px #369C7C; */
+    transition: opacity 0.3s ease;
+    opacity: 1;
+    transform-origin: 0 0;
+  }
+
+  .modal-content {
+    padding: 12px;
+    width: 100%
+  }
+  
+  /* Стили для регистрации и входа (добавьте свойства по вашему усмотрению) */
+  .text-green {
+    color: green;
+  }
+  
+  .text-pink {
+    color: pink;
+  }  
+ 
+
+ 

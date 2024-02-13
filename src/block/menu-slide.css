@@ -1,0 +1,6 @@
+.menu-slide {
+    font-size: clamp(12px, 1vw, 16px);
+    font-weight: 700;
+    color: rgb(36, 36, 36);
+    font-family: 'Monsteratt';
+}
