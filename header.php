@@ -27,12 +27,12 @@
                         
                     </div>
 
-                    <a href="/manicure"><img class="m-auto w-28 flex esm:flex sm:hidden md:hidden" src="<?php echo get_template_directory_uri() . '/src/img/logo.png'; ?>" alt="Logo"></a>
+                    <a href="/"><img class="m-auto w-28 flex esm:flex sm:hidden md:hidden" src="<?php echo get_template_directory_uri() . '/src/img/logo.png'; ?>" alt="Logo"></a>
          
                     
             
                     <div class=" hidden esm:hidden sm:flex md:flex gap-6">
-                        <a href="/manicure"><img class="m-auto w-32 md:w-48" src="<?php echo get_template_directory_uri() . '/src/img/logo.png'; ?>" alt="Logo"></a>
+                        <a href="/"><img class="m-auto w-32 md:w-48" src="<?php echo get_template_directory_uri() . '/src/img/logo.png'; ?>" alt="Logo"></a>
                         <div class="flex items-center">
                             <div class="relative">
                                 <?php echo do_shortcode('[fibosearch]'); ?>    
