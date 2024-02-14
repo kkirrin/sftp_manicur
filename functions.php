@@ -179,6 +179,21 @@ if (class_exists('WooCommerce')) {
 
 
 
+function wvs_teepro_theme_support() {
+    remove_action( 'woocommerce_after_shop_loop_item', 'wvs_pro_archive_variation_template', 30 );
+    remove_action( 'woocommerce_after_shop_loop_item', 'wvs_pro_archive_variation_template', 7 );
+    
+                    
+    add_filter( 'woo_variation_swatches_archive_add_to_cart_select_options', function () {
+        return '<i></i><span class="tooltip">' . __( 'Select options', 'woocommerce' ) . '</span>';
+    } );
+    
+    add_filter( 'woo_variation_swatches_archive_add_to_cart_text', function () {
+        return '<i></i><span class="tooltip">' . __( 'Add to cart', 'woocommerce' ) . '</span>';
+    } );
 
+}
+
+add_action( 'init', 'wvs_teepro_theme_support' );
 
 

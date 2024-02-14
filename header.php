@@ -54,7 +54,7 @@
                                         'menu_id' => 'sidebar-menu'
                                         ]);
                                     ?>
-					            </nav>
+                                </nav>
                                 
                                 <div>	
                     </div>

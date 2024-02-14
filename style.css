@@ -6,6 +6,12 @@ Version: 1.0
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+
+.woocommerce-mini-cart-item.mini_cart_item .attachment-woocommerce_thumbnail.size-woocommerce_thumbnail.wvs-archive-product-image{
+  width: 50%;
+}
+
+
 /* Класс box-shadow */
 .btn__shadow {
   box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
@@ -68,13 +74,25 @@ Version: 1.0
   margin: 0 0 1em;
   box-shadow: none;
 }
-
+flex.flex-viewport {
+  flex-flow: row-reverse !important;
+  flex-wrap: wrap !important;
+  margin-right: 30px;
+  width: 600px !important;
+  height: 600px !important;
+  margin-left: 20px;
+}
 
 .woocommerce-product-gallery.woocommerce-product-gallery--with-images.woocommerce-product-gallery--columns-4.images {
   flex-flow: row-reverse !important;
   /* flex-wrap: wrap !important; */
 }
 
+@media (max-width:1140px) {
+  .woocommerce-product-gallery.woocommerce-product-gallery--with-images.woocommerce-product-gallery--columns-4.images {
+    display: grid;
+  }
+}
 
 #dgwt-wcas-search-input-1 {
   border-radius: 6px;
@@ -143,7 +161,7 @@ Version: 1.0
 }
 
 .mobile-menu .sub-menu {
-  max-height: 0;
+  /* max-height: 0; */
   opacity: 0;
   will-change: max-height;
   transition: all 0.5s ease;
@@ -153,6 +171,7 @@ Version: 1.0
   position: static;
   padding-top: 10px;
   padding-left: 20px;
+
 }
 
 
@@ -208,11 +227,20 @@ th.label {
   padding-bottom: 10px;
 } 
 
+@media (max-width:1920px) {
+  .site-main {
+    padding-top: 210px !important;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
 
-.site-main {
-  padding-top: 210px !important;
-  max-width: 1440px;
-  margin: 0 auto;
+@media (max-width:769px) {
+  .site-main {
+    padding-top: 80px !important;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
 }
 
 .product_meta + div.product-accordion {
@@ -265,23 +293,37 @@ th.label {
   display: none;
 }
 
-.flex-viewport {
-  flex-flow: row-reverse !important;
-  flex-wrap: wrap !important;
-  margin-right: 30px;
-  width: 600px !important;
-  height: 600px !important;
+
+@media (max-width:1920px) {
+  .flex-viewport {
+    flex-flow: row-reverse !important;
+    flex-wrap: wrap !important;
+    margin-right: 30px;
+    width: 600px !important;
+    height: 600px !important;
+    margin-left: 20px;
+  }
 }
 
-@media (max-width:769) {
+@media (max-width:1140px) {
   .flex-viewport {
+    gap: 10px !important;
+    margin-top: 20px;
     margin-right: 30px;
+    width: 300px !important;
+    height: 300px !important;
   }
 
   .flex-control-nav  {
-    display: flex;
+    display: flex !important;
   }
   
+}
+
+@media (max-width:769px) {
+  .flex-control-nav.flex-control-thumbs {
+    display: flex;
+  }
 }
 
 .minus.button.wp-element-button, .plus.button.wp-element-button  {
@@ -316,7 +358,7 @@ th.label {
 }
 
 .woocommerce div.product div.images .flex-control-thumbs li   {
-    width: 60px;
+    width: 100px;
     height: 100px;
 }
 
@@ -332,7 +374,7 @@ th.label {
 
 @media (max-width:769px) {
   .woocommerce-notices-wrapper + div.container{
-    padding-top: 100px !important;
+    padding-top: 0px !important;
   }
 }
 
@@ -984,37 +1026,36 @@ input[type=number] {
   cursor: pointer;
 }
 
+.header-menu li> ul.sub-menu > li > ul.sub-menu {
+  margin-top: 0 !important;
+}
+
 .header-menu li:hover>.sub-menu {
   display: flex;
   gap: 15px;
-  padding: 15px;
+  padding: 5px;
   flex-wrap: wrap;
   position: absolute;
-  top: 0;
-  width: 400px !important;
   top: 100%;
-  width: auto;
+  width: 400px;
   z-index: 5;
   transform-origin: 0 0;
-  transform: rotateX(-90deg);
-  transition: all 0.5s ease;
-  opacity: 0;
-  visibility: hidden;
+  transform: rotateX(0);
+  transition: all 1s ease;
+  opacity: 1;
+  visibility: visible;
   text-transform: lowercase;
-  -webkit-box-shadow: 0px 1px 12px 2px rgba(34, 60, 80, 0.08);
-  -moz-box-shadow: 0px 1px 12px 2px rgba(34, 60, 80, 0.08);
   box-shadow: 0px 1px 12px 2px rgba(34, 60, 80, 0.08);
   color: rgb(34, 37, 60);
   font-size: 16px;
   font-weight: 700;
-  position: absolute;
-  top: auto;
 }
 
 .catalog-menu .sub-menu.is-active {
   opacity: 1;
   visibility: visible;
-  margin-bottom: auto;
+  margin-bottom: auto;;
+  transition: 1s all;
 }
 
 .catalog-menu li a::before {
@@ -1040,6 +1081,7 @@ input[type=number] {
   max-height: 0;
   opacity: 0;
   will-change: max-height;
+  transform-origin: 0 0;
   transition: all 0.5s ease;
   box-sizing: border-box;
   transform: none;
@@ -1052,7 +1094,6 @@ input[type=number] {
 .catalog-menu:hover > .sub-menu.is-active {
   margin-top: 20px; 
 }
-
 
 
 .sub-menu ul.sub-menu li {
@@ -1082,19 +1123,30 @@ input[type=number] {
 }
 
 .header-menu li:hover > .sub-menu {
-  transition: all 0.5s;
+  transition: all 1s;
   transform: rotateX(0);
   opacity: 1;
   visibility: visible;
   background-color: #ffffff;
   color: #000000;
-  padding: 20px; 
+  padding: 5px 20px; 
+  margin-top: 0px;
 }
 
 
+#menu_ul li > ul.sub-menu {
+  margin-top: -30px;
+}
+
+#menu_ul li > ul.sub-menu > li.sub-menu{
+  margin-top: 0;
+}
+
 .modal-wrapper {
+  width: 300px !important;
   position: absolute;
   z-index: 1000;
+  right: 50px;
   top: 90px;
   transition: all 0.5s;
   -webkit-box-shadow: 0px 1px 12px 2px rgba(34, 60, 80, 0.08);
@@ -1111,7 +1163,8 @@ input[type=number] {
 
 .modal-content {
   padding: 12px;
-  width: 100%
+  width: 100%;
+  width: 300px;
 }
 
 /* Стили для регистрации и входа (добавьте свойства по вашему усмотрению) */

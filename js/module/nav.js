@@ -17,14 +17,14 @@ export const initNav = () => {
     //     console.log('клик')
     // });
 
-    mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', (evt) => {
-            evt.preventDefault();
-            menuButton.classList.remove('active');
-            menu.classList.remove('is-active');
-            body.classList.remove('lock');
-        });
-    });
+    // mobileMenuLinks.forEach(link => {
+    //     link.addEventListener('click', (evt) => {
+    //         evt.preventDefault();
+    //         menuButton.classList.remove('active');
+    //         menu.classList.remove('is-active');
+    //         body.classList.remove('lock');
+    //     });
+    // });
     mobileMenuButton.addEventListener('click', (evt) => {
         evt.preventDefault();
         mobileMenuButton.classList.toggle('active');

@@ -122,8 +122,9 @@ get_header();
                                     $product_image = wp_get_attachment_url( $product->get_image_id() );
                                     $product_price = $product -> get_price();
                                     $id = $product->get_id();  
-                                    $product_color = $product -> get_attribute('color');      
+                                    // $product_color = $product -> get_attribute('color');      
                                     $product_link = $product -> get_permalink();    
+                                    $product_color = $product->get_meta('color');
                                         
                                     echo '
                                         <div class="swiper-slide sale-item rounded-xl relative">
@@ -139,17 +140,35 @@ get_header();
 
                                                 ';
 
-                                                echo do_action('wvs_pro_variation_show_archive_variation');
-
-                                                do_action('wvs_pro_variation_show_archive_variation');
-
                                                 echo '
 
                                                 <div class="flex flex-col md:flex-row items-center md:items-start mt-5">
                                                     <div class="flex items-center justify-center md:justify-around flex-col esm:flex-col sm:flex-col md:flex-row">
                                                         <div class="font-bold text-sm md:text-2xl md:mb-0 mr-10 mb-2">'. $product_price .'р</div>
                                                         
-                                                        <form action="#" method="post" enctype="multipart/form-data">
+                                                        <ul class="variations"> 
+                                                            <li class="woo-variation-items-wrapper">
+                                                                <select style="display:none" id="pa_color-29" class=" woo-variation-raw-select" name="attribute_pa_color" data-attribute_name="attribute_pa_color" data-show_option_none="yes">
+
+                                                                <option value="">
+                                                                    Выбрать опцию
+                                                                </option>
+
+                                                                <option value="white" class="attached enabled">
+                                                                    Белый
+                                                                </option>
+
+                                                                <option value="yellow" class="attached enabled">
+                                                                    Желтый
+                                                                </option>
+
+                                                                <option value="green" class="attached enabled">
+                                                                    Зеленый
+                                                                </option><option value="red" class="attached enabled">Красный</option></select>
+                                                                </li>
+                                                        </ul>
+                                                        
+                                                        <form class="woocommerce-ordering" method="get">
                                                         
                                                             <div class="flex items-center justify-between gap-2 flex-wrap ">
                                                                     <div class="quantity buttons_added flex items-center justify-center gap-2 rounded-lg border-2 border-gray py-2 px-12 sm:px-20 md:px-6 md:py-3">
@@ -160,10 +179,8 @@ get_header();
 
                                                                         <input type="number" id="quantity_65c1b90451f5a" class="input-text qty text" name="quantity" value="1" aria-label="Количество товара" size="4" min="1" max="" step="1" placeholder="" inputmode="numeric" autocomplete="off"><input type="button" value="+" class="plus cursor-pointer">
                                                                     </div>
-                                                        
-                                                                    <button class="pointer text-white py-2 px-4 md:py-3 md:px-3 rounded-md bg-bg-black flex-1 mt-2 md:mt-0" type="submit" name="add-to-cart" value="'.$id .'" class="single_add_to_cart_button button alt">
-                                                                        В корзину
-                                                                    </button>
+                                                                    
+                                                                    <a href="'.esc_url($product_link).'" class="pointer text-white py-2 px-4 md:py-3 md:px-3 rounded-md bg-bg-black flex-1 mt-2 md:mt-0 button product_type_variable add_to_cart_button wvs-add-to-cart-button wvs_ajax_add_to_cart" data-product_id="432" data-product_sku="523452313" aria-label="Добавить в корзину &amp;ldquo;ALBI DIAMOND - Желтый, 15мл&amp;rdquo;" aria-describedby="Этот товар имеет несколько вариаций. Опции можно выбрать на странице товара." rel="nofollow" data-o_html="Выберите параметры" data-o_href="http://xn--80adtccfljcd2ap1krb.xn--p1ai/?product=albi-diamond-%d0%ba%d0%be%d0%bf%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d1%82%d1%8c-2" data-o_aria-label="Выберите опции для “ALBI DIAMOND”"><i></i><span class="tooltip">В корзину</span></a>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -179,7 +196,10 @@ get_header();
                                 echo 'Товаров со скидкой не найдено.';
                             }
                         
-                        ?>
+                        ?>  
+                        
+                        <!-- <?php echo do_shortcode('[products limit="5" columns="5" paginate="true"]'); ?> -->
+                        
                     </div>
                 </div>
             </div>
