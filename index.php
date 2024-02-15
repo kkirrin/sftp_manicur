@@ -23,11 +23,33 @@ get_header();
 
         </div>
         
-        <div class="b-marquee w-full my-10">
-            <div class="b-marquee__text text-sm esm:text-sm sm:text-lg md:text-3xl"> 
-                &compfn;Набор масел 25 шт за 2000 рублей! &compfn;Набор масел 25 шт за 2000 рублей! &compfn;Набор масел 25 шт за 2000 рублей! &compfn;Набор масел 25 шт за 2000 рублей! &compfn;Набор масел 25 шт за 2000 рублей! &compfn;Набор масел 25 шт за 2000 рублей! &compfn;Набор масел 25 шт за 2000 рублей! &compfn;Набор масел 25 шт за 2000 рублей! &compfn;Набор масел 25 шт за 2000 рублей! &compfn;Набор масел 25 шт за 2000 рублей!
+        <div class="wrap">
+            <div class="items-wrap">
+                <div class="items marquee">
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
             </div>
-        </div>      
+                <div aria-hidden="true" class="items marquee">
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
+                <div class="item">&compfn;Набор масел 25 шт за 2000 рублей!</div>
+            </div>
+        </div>
     </section>
 
     <!-- Категории -->
@@ -67,8 +89,8 @@ get_header();
         </div>
     </section>
 
-    <!-- Распродажа -->
-    <section class="py-8 esm:py-8 sm:py-8 md:py-10 swiper-item w-full bg-light-gray">
+      <!-- Распродажа -->
+      <section class="py-8 esm:py-8 sm:py-8 md:py-10 swiper-item w-full bg-light-gray">
         <div class="container">
             <div class="flex items-center justify-between">
                 <div>
@@ -98,37 +120,36 @@ get_header();
 
             <div class="new-items-section">
                 <div class="swiper new-items-1">
-                    <div class="swiper-wrapper gap-[20px]">
-                    <?php 
+                    <div class="swiper-wrapper gap-[20px] w-0 min-w-[100%]">
+                        <?php
                         $args = array(
                             'post_type' => 'product',
                             'posts_per_page' => -1,
                             'product_cat' => 'sale',
                         );
-                        
-                        $query = new WP_Query( $args );
 
-                        if ( $query->have_posts() ) {
+                        $query = new WP_Query($args);
 
-                            while ( $query->have_posts() ) {
+                        if ($query->have_posts()) {
+
+                            while ($query->have_posts()) {
                                 $query->the_post();
-        
-                                    $terms = get_the_terms( $post->ID, 'product_cat' );
 
-                                    $product = wc_get_product( get_the_ID() );
-                            
-                                    $product_name = $product->get_name();
-                                    $product_sku = $product->get_sku();
-                                    $product_image = wp_get_attachment_url( $product->get_image_id() );
-                                    $product_price = $product -> get_price();
-                                    $id = $product->get_id();  
-                                    // $product_color = $product -> get_attribute('color');      
-                                    $product_link = $product -> get_permalink();    
-                                    $product_color = $product->get_meta('color');
-                                        
-                                    echo '
-                                        <div class="swiper-slide sale-item rounded-xl relative">
-                                                <a href="'.esc_url($product_link).'">
+                                $terms = get_the_terms($post->ID, 'product_cat');
+
+                                $product = wc_get_product(get_the_ID());
+
+                                $product_name = $product->get_name();
+                                $product_sku = $product->get_sku();
+                                $product_image = wp_get_attachment_url($product->get_image_id());
+                                $product_price = $product->get_price();
+                                $id = $product->get_id();
+                                $product_link = $product->get_permalink();
+                                $product_color = $product->get_meta('color');
+
+                                echo '
+                                        <div class="swiper-slide swiper-slide-sale sale-item rounded-xl relative">
+                                                <a href="' . esc_url($product_link) . '">
                                                     <div class="new-items-section__img relative">
                                                         <img class="rounded-xl h-auto" src="' . $product_image . '" alt="" />
                                                     </div>
@@ -138,68 +159,91 @@ get_header();
                                             
                                                 <p class="font-medium text-xs sm:text-base md:text-xl pt-2 pb-5 text-gray">Артикул: <span>' . $product_sku . '</span></p>
 
+                                                <div class="font-bold text-sm md:text-2xl md:mb-0 mr-10 mb-2">' . $product_price . 'р</div>
+
                                                 ';
 
-                                                echo '
 
-                                                <div class="flex flex-col md:flex-row items-center md:items-start mt-5">
-                                                    <div class="flex items-center justify-center md:justify-around flex-col esm:flex-col sm:flex-col md:flex-row">
-                                                        <div class="font-bold text-sm md:text-2xl md:mb-0 mr-10 mb-2">'. $product_price .'р</div>
-                                                        
-                                                        <ul class="variations"> 
-                                                            <li class="woo-variation-items-wrapper">
-                                                                <select style="display:none" id="pa_color-29" class=" woo-variation-raw-select" name="attribute_pa_color" data-attribute_name="attribute_pa_color" data-show_option_none="yes">
 
-                                                                <option value="">
-                                                                    Выбрать опцию
-                                                                </option>
 
-                                                                <option value="white" class="attached enabled">
-                                                                    Белый
-                                                                </option>
+                                echo '<div class="flex flex-col">
+                                     
+                                                                                       
+                                    <form class="variations_form" action="' . esc_url($product->add_to_cart_url()) . '" method="post" enctype="multipart/form-data">
+                                    <div class="flex flex-col justify-between gap-2 flex-wrap ">';
 
-                                                                <option value="yellow" class="attached enabled">
-                                                                    Желтый
-                                                                </option>
+                                if ($product->is_type('variable')) {
+                                    $attributes = $product->get_variation_attributes();
+                                    $available_variations = $product->get_available_variations();
 
-                                                                <option value="green" class="attached enabled">
-                                                                    Зеленый
-                                                                </option><option value="red" class="attached enabled">Красный</option></select>
-                                                                </li>
-                                                        </ul>
-                                                        
-                                                        <form class="woocommerce-ordering" method="get">
-                                                        
-                                                            <div class="flex items-center justify-between gap-2 flex-wrap ">
-                                                                    <div class="quantity buttons_added flex items-center justify-center gap-2 rounded-lg border-2 border-gray py-2 px-12 sm:px-20 md:px-6 md:py-3">
-                                                                        <input type="button" value="-" class="minus cursor-pointer">
-                                                                        <label class="screen-reader-text" for="quantity_65c1b90451f5a">
-                                                                                    Количество товара '.$product_name.'
-                                                                        </label>
+                                    foreach ($attributes as $attribute_name => $options) {
 
-                                                                        <input type="number" id="quantity_65c1b90451f5a" class="input-text qty text" name="quantity" value="1" aria-label="Количество товара" size="4" min="1" max="" step="1" placeholder="" inputmode="numeric" autocomplete="off"><input type="button" value="+" class="plus cursor-pointer">
-                                                                    </div>
-                                                                    
-                                                                    <a href="'.esc_url($product_link).'" class="pointer text-white py-2 px-4 md:py-3 md:px-3 rounded-md bg-bg-black flex-1 mt-2 md:mt-0 button product_type_variable add_to_cart_button wvs-add-to-cart-button wvs_ajax_add_to_cart" data-product_id="432" data-product_sku="523452313" aria-label="Добавить в корзину &amp;ldquo;ALBI DIAMOND - Желтый, 15мл&amp;rdquo;" aria-describedby="Этот товар имеет несколько вариаций. Опции можно выбрать на странице товара." rel="nofollow" data-o_html="Выберите параметры" data-o_href="http://xn--80adtccfljcd2ap1krb.xn--p1ai/?product=albi-diamond-%d0%ba%d0%be%d0%bf%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d1%82%d1%8c-2" data-o_aria-label="Выберите опции для “ALBI DIAMOND”"><i></i><span class="tooltip">В корзину</span></a>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                        </div>  
-                                    ';
-                                        
+                                        // Выводим радио-кнопки для каждого атрибута
+                                        echo '<div class="woocommerce-variation single_variation">';
+                                        echo '<fieldset>';
+                                        echo '<legend> Выберите ' . wc_attribute_label($attribute_name) . ' </legend>';
+
+
+                                        // Переменная для определения первой итерации цикла
+                                        $is_first_option = true;
+
+                                        $unique_suffix = $product->get_id();
+
+                                        echo '<div class="inputs-wrapper">';
+                                        foreach ($options as $option) {
+
+                                            $checked = $is_first_option ? 'checked' : '';
+
+                                            $option_slug = sanitize_title($option);
+
+
+                                            echo '<label class="' . $checked . ' ' . $attribute_name . '-label"
+                                            style="background-color: #' . esc_attr($option_slug) . ';"
+                                            >';
+                                            echo '<input class="' . $attribute_name . '-input" type="radio" name="attribute_' . sanitize_title($attribute_name) . '" 
+                                                    id="' . esc_attr($option_slug) . '" value="' . esc_attr($option) . '" ' . $checked . '>' .
+                                                esc_html(apply_filters('woocommerce_variation_option_name', $option));
+                                            echo '</label>';
+
+                                            $is_first_option = false;
+                                        }
+
+                                        echo '</div>';
+                                        echo '</fieldset>';
+                                        echo '</div>';
+                                    }
+                                    // Добавляем скрытое поле, необходимое для вариативных товаров
+                                    echo '<input type="hidden" name="product_id" value="' . esc_attr($product->get_id()) . '" />';
+                                    echo '<input type="hidden" name="variation_id" class="variation_id" value="" />';
                                 }
 
-                                
-                            wp_reset_postdata();
-                            } else {
-                                echo 'Товаров со скидкой не найдено.';
+
+                                echo '
+                                    <div class="flex gap-5 items-center justify-between flex-wrap">
+                                    <div class="quantity buttons_added flex  gap-2 rounded-lg border-2 border-gray px-12 sm:px-20 md:px-6">
+                                         <input type="button" value="-" class="minus cursor-pointer">
+                                          <input type="number" id="quantity_65c1b90451f5a" class="input-text qty text" name="quantity" value="1" aria-label="Количество товара" size="4" min="1" max="" step="1" placeholder="" inputmode="numeric" autocomplete="off">
+                                          <input type="button" value="+" class="plus cursor-pointer">
+                                     </div>
+                                                                    
+                                    <button type="submit" name="add-to-cart" value="' . esc_attr($product->get_id()) . '" class="pointer text-white py-2 px-4 md:py-3 md:px-3 rounded-md bg-bg-black flex-1 mt-2 md:mt-0 single_add_to_cart_button button alt">В корзину</button>
+                                                            </div>
+                                                        </form>
+                                    </div>
+                                    </div>
+                                        </div>';
+
+
                             }
-                        
-                        ?>  
-                        
-                        <!-- <?php echo do_shortcode('[products limit="5" columns="5" paginate="true"]'); ?> -->
-                        
+
+
+                            wp_reset_postdata();
+                        } else {
+                            echo 'Товаров со скидкой не найдено.';
+                        }
+
+                        ?>
+
                     </div>
                 </div>
             </div>

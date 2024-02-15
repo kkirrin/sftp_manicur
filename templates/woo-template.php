@@ -6,8 +6,8 @@ Template Name: Woocommerce страницы - шаблон
 <?php get_header(); ?>
 
 
-<main class="inner-page-main lk" style="padding-bottom: 100px;">
-    <div class="container">
+<main class="inner-page-main lk">
+    <div class="container" style="min-height: 38.2vh;">
         <h1>
             <?php the_title(); ?>
         </h1>

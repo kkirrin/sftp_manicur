@@ -124,41 +124,6 @@ function custom_sku_output() {
             ';
         }
     }
-    // add_action('woocommerce_single_product_summary', 'custom_h2', 100);
-
-    // function custom_h2() {
-    //     global $product;
-        
-    //     if ($product && $product->get_sku()) {
-    //         echo '<div class="pb-10 pt-10 related_title">Это может пригодиться</div>';
-    //     }
-    // }
-
-    // remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
-
-    // add_action('woocommerce_single_product_summary', );
-
-
-
-
-    // add_filter( 'woocommerce_product_tabs', 'wc_remove_description_tab', 11, 1 );
-    // function wc_remove_description_tab( $tabs ) {
-    //     if ( isset( $tabs['description'] ) ) {
-    // unset( $tabs['description'] );
-
-  
-// }
-
-// }
-
-// Функция замены текста в секции Похожие товары"
-
-// функция добавляет краткое описание на карточку товара
-
-// add_action( 'woocommerce_after_shop_loop_item', 'excerpt_short_description', 7 );c
-// function excerpt_short_description() {
-// 	the_excerpt();
-// }
 
 // меняет текст в "похожих товаров" 
 add_filter('gettext', 'translate_text');
@@ -195,5 +160,3 @@ function wvs_teepro_theme_support() {
 }
 
 add_action( 'init', 'wvs_teepro_theme_support' );
-
-

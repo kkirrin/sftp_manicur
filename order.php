@@ -14,7 +14,7 @@ Template Name: Доставка и оплата - шаблон
                     <div class="breadcrumb">
                         <ul class="breadcrumb__list flex items-center justify-start gap-2">
                             <li class="breadcrumb__item text-bg-black opacity-60 ">
-                                <a href="/manicure">
+                                <a href="/">
                                     Главная
                                 </a>
                             </li>

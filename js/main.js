@@ -28,4 +28,41 @@ window.addEventListener('DOMContentLoaded', () => {
     initTab();
     initLk();
 
+    const swiperSlidesSale = document.querySelectorAll('.swiper-slide-sale');
+
+    if (swiperSlidesSale) {
+
+        swiperSlidesSale.forEach(slide => {
+            const radioInputs = slide.querySelectorAll('.pa_color-input');
+            radioInputs.forEach(function (radioInput) {
+                radioInput.addEventListener('change', function () {
+                    slide.querySelectorAll('.pa_color-label').forEach(function (label) {
+                        label.classList.remove('checked');
+                    });
+
+                    let selectedLabel = this.parentElement;
+                    if (selectedLabel) {
+                        selectedLabel.classList.add('checked');
+                    }
+                });
+            });
+
+            const radioLabels = slide.querySelectorAll('.pa_amount-input');
+            radioLabels.forEach(function (radioLabel) {
+                radioLabel.addEventListener('change', function () {
+                    slide.querySelectorAll('.pa_amount-label').forEach(function (label) {
+                        label.classList.remove('checked');
+                    });
+
+                    let selectedLabel = this.parentElement;
+                    if (selectedLabel) {
+                        selectedLabel.classList.add('checked');
+                    }
+                });
+            });
+        });
+    }
+
+    
+
 });

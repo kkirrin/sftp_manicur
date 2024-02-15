@@ -60,7 +60,7 @@ function true_order_again($actions, $order)
 add_filter('woocommerce_login_redirect', 'manicure_login_redirect', 25, 2);
 function manicure_login_redirect($redirect, $user)
 {
-    $redirect = site_url('/?page_id=685');
+    $redirect = site_url('?page_id=685');
     return $redirect;
 }
 
@@ -287,6 +287,66 @@ function handle_custom_email_fields_form_submission()
     }
 }
 add_action('init', 'handle_custom_email_fields_form_submission');
+
+
+
+add_action('template_redirect', 'handle_custom_add_to_cart');
+function handle_custom_add_to_cart()
+{
+    if (isset($_POST['add-to-cart']) && isset($_POST['product_id'])) {
+        $product_id = (int) $_POST['product_id'];
+        $quantity = empty($_POST['quantity']) ? 1 : wc_stock_amount($_POST['quantity']);
+        $variation_id = 0;
+        $variations = [];
+
+        if (isset($_POST['variation_id']) && $_POST['variation_id']) {
+            $variation_id = $_POST['variation_id'];
+        } else {
+            // Ищем ID вариации продукта на основе атрибутов.
+            foreach ($_POST as $key => $value) {
+                if (strpos($key, 'attribute_') === 0) {
+                    $variations[sanitize_text_field(str_replace('attribute_', '', $key))] = sanitize_text_field($value);
+                }
+            }
+            if (!empty($variations)) {
+                $variation_id = find_matching_product_variation_id($product_id, $variations);
+            }
+        }
+
+        if ($variation_id && $product_id) {
+            WC()->cart->add_to_cart($product_id, $quantity, $variation_id, $variations);
+            wc_add_to_cart_message(array($product_id => $quantity), true);
+        }
+
+        wp_redirect(wc_get_cart_url());
+        exit;
+    }
+}
+
+// Функция для определения ID вариации по атрибутам
+function find_matching_product_variation_id($product_id, $variations)
+{
+    $matching_variation_id = 0;
+    $product = wc_get_product($product_id);
+
+    if ($product instanceof WC_Product_Variable) {
+        foreach ($product->get_available_variations() as $variation) {
+            $match = true;
+            foreach ($variations as $key => $value) {
+                if ($variation['attributes']['attribute_' . $key] != $value) {
+                    $match = false;
+                    break;
+                }
+            }
+            if ($match) {
+                $matching_variation_id = $variation['variation_id'];
+                break;
+            }
+        }
+    }
+
+    return $matching_variation_id;
+}
 
 
 ?>

@@ -46,6 +46,18 @@
 
                                 <!-- Мобильное меню -->
 
+                                <nav class="">
+                                    <?php wp_nav_menu([
+                                        'theme_location' => 'mobile-link',
+                                        'container' => '',
+                                        'menu_class' => '',
+                                        'menu_id' => ''
+                                        ]);
+                                    ?>
+                                </nav>
+
+
+
                                 <nav class="catalog-menu">
                                     <?php wp_nav_menu([
                                         'theme_location' => 'sidebar-menu',
