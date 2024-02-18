@@ -51,7 +51,7 @@
                                         'theme_location' => 'mobile-link',
                                         'container' => '',
                                         'menu_class' => '',
-                                        'menu_id' => ''
+                                        'menu_id' => 'mobile__link'
                                         ]);
                                     ?>
                                 </nav>

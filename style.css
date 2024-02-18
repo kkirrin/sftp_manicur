@@ -7,6 +7,85 @@ Version: 1.0
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
 
+.products.columns-3 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.woocommerce ul.products.columns-3 li.product, .woocommerce-page ul.products.columns-3 li.product {
+  display: grid;
+}
+
+
+/* product type-product переписать*/
+
+
+.product.type-product.post-997.status-publish.product_cat-disign.has-post-thumbnail.shipping-taxable.purchasable.product-type-simple .wrapper_shop {
+  display: inline-flex !important;
+  justify-content: end !important;
+}
+
+.sale__item--heigth {
+  height: 22vh !important;
+}
+
+@media (max-width:769px) {
+  .sale__item--heigth {
+    height: 34vh !important;
+  }
+}
+@media (max-width:450px) {
+  .sale__item--heigth {
+    height: 40vh !important;
+  }
+}
+
+
+
+.onsale {
+  display: none;
+}
+
+.product.type-product.post-1131.status-publish.last.outofstock.product_cat-disign.has-post-thumbnail.shipping-taxable.purchasable.product-type-simple .woocommerce-loop-product__title  {
+  color: rgb(36, 36, 36);
+  font-size: clamp(14px, 5vw, 16px);
+  font-weight: 700;
+  padding: 0;
+  line-height: 0 !important;
+  padding-bottom: 10px;
+}
+
+ul.products li.product .woocommerce-loop-product__title {
+  color: rgb(36, 36, 36);
+  font-size: clamp(14px, 5vw, 16px);
+  font-weight: 700;
+  padding: 0;
+  line-height: 0 !important;
+  padding-bottom: 10px;
+}
+
+@media(max-width: 1920px) {
+  #dgwt-wcas-search-input-1 {
+    width: 615px;
+  }
+}
+
+@media(max-width: 1299px) {
+  #dgwt-wcas-search-input-1 {
+    width: 523px;
+  }
+}
+@media(max-width: 1185px) {
+  #dgwt-wcas-search-input-1 {
+    width: 300px;
+  }
+}
+
+#mobile__link li a::before {
+  content: none;
+}
+
 .wp-block-heading.has-text-align-center.with-empty-cart-icon.wc-block-cart__empty-cart__title {
   background: rgb(242, 243, 248);
   padding: 35px;
@@ -147,9 +226,9 @@ S
 .reverce {
   animation-direction: reverse;
 }
-.items-wrap:hover .marquee {
+/* .items-wrap:hover .marquee {
   animation-play-state: paused;
-}
+} */
 
 
 @keyframes scroll {
@@ -318,17 +397,18 @@ flex.flex-viewport {
   margin-bottom: auto;
 }
 
-.mobile-menu li a::before {
+.mobile-menu li:not(:last-child) a::before {
   content: '';
   position: absolute;
   height: 6px;
   width: 10px;
   top: 8px;
-  right: 10px;
+  right: -10px;
   background-image: url('src/img/icons/arrow-up.svg');
   background-repeat: no-repeat;
   transition: all 0.3s ease;
 }
+
 
 .mobile-menu li a.is-active::before {
   transform: rotate(180deg);
@@ -777,7 +857,7 @@ input[type=number] {
     width: 213px;
   }
   .category-item {
-    width: 157px !important;
+    width: 178px !important;
     height: 157px !important;
   }
 }
@@ -789,6 +869,15 @@ input[type=number] {
   .category-item {
     width: 155px;
     height: 155px;
+  }
+}
+@media (max-width: 399px) {
+  .attachment-thumbnail.size-thumbnail {
+    width: 213px !important; 
+  }
+  .category-item {
+    width: 155px !important;
+    height: 155px !important;
   }
 }
 
@@ -1016,7 +1105,7 @@ input[type=number] {
   visibility: hidden;
   border-radius: 6px;
   position: fixed;
-  top:14%;
+  top:12%;
   left: 0%;
   padding: 20px;
   overflow: auto;
@@ -1249,7 +1338,7 @@ input[type=number] {
   height: 6px;
   width: 10px;
   top: 8px;
-  right: 10px;
+  right: -10px;
   background-image: url('src/img/icons/arrow-up.svg');
   background-repeat: no-repeat;
   transition: all 0.3s ease;
@@ -1286,6 +1375,10 @@ input[type=number] {
   font-size: 16px;
   font-weight: 600;
   
+}
+
+.sub-menu ul.sub-menu li a::before {
+  content: none;
 }
 
 
@@ -3480,7 +3573,7 @@ h2, h3 {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   margin-bottom: 15px;
 }
 
@@ -3501,9 +3594,21 @@ h2, h3 {
 
 
 .pa_color-label.checked {
-  border: 2px solid red;
+  border: 2px solid rgb(0, 0, 0);
   opacity: 1;
 }
+
+.pa_color-label.checked::before {
+    background-image: var(--wvs-tick);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    content: " ";
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+} 
 
 
 /* количество */

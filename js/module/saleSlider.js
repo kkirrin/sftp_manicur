@@ -18,8 +18,8 @@ export const initSaleSlider = () => {
                     spaceBetween: 15
                 },
                 460: {
-                    slidesPerView: 2,
-                    spaceBetween: 15
+                    slidesPerView: 1.2,
+                    spaceBetween: 30
                 },
                 460: {
                     slidesPerView: 2,

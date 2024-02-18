@@ -120,7 +120,7 @@ get_header();
 
             <div class="new-items-section">
                 <div class="swiper new-items-1">
-                    <div class="swiper-wrapper gap-[20px] w-0 min-w-[100%]">
+                    <div class="swiper-wrapper gap-[20px] w-0 min-w-[100%]" style="align-items: stretch;">
                         <?php
                         $args = array(
                             'post_type' => 'product',
@@ -148,7 +148,7 @@ get_header();
                                 $product_color = $product->get_meta('color');
 
                                 echo '
-                                        <div class="swiper-slide swiper-slide-sale sale-item rounded-xl relative">
+                                        <div class="swiper-slide swiper-slide-sale sale-item rounded-xl relative" style="height:auto;">
                                                 <a href="' . esc_url($product_link) . '">
                                                     <div class="new-items-section__img relative">
                                                         <img class="rounded-xl h-auto" src="' . $product_image . '" alt="" />
@@ -166,7 +166,7 @@ get_header();
 
 
 
-                                echo '<div class="flex flex-col">
+                                echo '<div class="flex flex-col sale__item--heigth">
                                      
                                                                                        
                                     <form class="variations_form" action="' . esc_url($product->add_to_cart_url()) . '" method="post" enctype="multipart/form-data">
@@ -219,7 +219,7 @@ get_header();
 
 
                                 echo '
-                                    <div class="flex gap-5 items-center justify-between flex-wrap">
+                                    <div class="flex gap-5 items-center justify-between flex-wrap absolute bottom-0">
                                     <div class="quantity buttons_added flex  gap-2 rounded-lg border-2 border-gray px-12 sm:px-20 md:px-6">
                                          <input type="button" value="-" class="minus cursor-pointer">
                                           <input type="number" id="quantity_65c1b90451f5a" class="input-text qty text" name="quantity" value="1" aria-label="Количество товара" size="4" min="1" max="" step="1" placeholder="" inputmode="numeric" autocomplete="off">
