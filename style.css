@@ -4,8 +4,18 @@ Author: штышву360
 Description: Кастомная тема wordpress для сайта "Твой маникюрный магазин"
 Version: 1.0
 */
+.related.products .products.columns-4 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media(max-width:500px) {
+  .related.products .wvs-archive-product-wrapper.product.type-product.status-publish.first.instock.product_cat-aibi.product_cat-geli_laki.product_cat-_-aibi.product_cat-sale.has-post-thumbnail.shipping-taxable.purchasable.product-type-variable {
+    width: 90%;
+  }
+}
 .category__item--title {
-  font-size: clamp(11px, 1.2vw, 18px);
+  font-size: clamp(10px, 1.2vw, 18px);
 }
 
 .logo {
@@ -59,6 +69,13 @@ Version: 1.0
 @media(max-width:663px) {
   .swiper-slide {
     height: 76vh !important;
+  }
+}
+
+
+@media(max-width:500px) {
+  .swiper-slide {
+    height: 86vh !important;
   }
 }
 
