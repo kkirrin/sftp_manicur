@@ -56,13 +56,6 @@ function true_order_again($actions, $order)
     return $actions;
 }
 
-// перенаправлять пользователя на определённый URL после авторизации
-add_filter('woocommerce_login_redirect', 'manicure_login_redirect', 25, 2);
-function manicure_login_redirect($redirect, $user)
-{
-    $redirect = site_url('?page_id=685');
-    return $redirect;
-}
 
 
 // Функция "повторить заказ" для вывода LI заказа на странице ЛК

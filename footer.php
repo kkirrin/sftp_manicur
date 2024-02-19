@@ -1,11 +1,11 @@
 <footer class="bg-bg-black py-10 ">
             <div class="container flex flex-col md:flex-row items-center justify-between">
-                <a href="/"><img class="h-16 mb-4 md:mb-0 hidden esm:hidden sm:block md:block" src="<?php echo get_template_directory_uri() . '/src/img/logo__light.png'; ?>" alt="Logo"></a>
+                <a href="/"><img class="h-16 mb-4 md:mb-0 hidden esm:hidden sm:block md:block" src="<?php echo get_template_directory_uri() . '/src/img/logo__light.svg'; ?>" alt="Logo"></a>
         
                 <ul class="text-white text-xs mb-4 md:mb-0 flex flex-col items-center esm:block sm:hidden md:hidden">
                     <li class="pb-4">
                         <a href="/">
-                            <img class="h-16" src="<?php echo get_template_directory_uri() . '/src/img/logo__light.png'; ?>" alt="Logo">
+                            <img class="h-16" src="<?php echo get_template_directory_uri() . '/src/img/logo__light.svg'; ?>" alt="Logo">
                         </a>
                     </li>     
                 </ul>
@@ -51,7 +51,7 @@
                         <div class="mr-10">
                             <ul class="text-xs text-white">
                                 <li class="pb-2">г. Артем, 1-ая рабочая 41 стр. 1, 2 этаж</li>
-                                <li class="pb-2"><a href="tel:+79990586241">+7 (999) 058-62-41</a></li>
+                                <li class="pb-2"><a href="tel:+79143247860">+7 914 324-78-60</a></li>
                                 <li class="pb-2"><a href="email:kalistratovamalai@mail.ru">kalistratovamalai@mail.ru</a></li>
                             </ul>
                         </div>  

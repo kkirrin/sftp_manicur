@@ -4,8 +4,106 @@ Author: штышву360
 Description: Кастомная тема wordpress для сайта "Твой маникюрный магазин"
 Version: 1.0
 */
+.category__item--title {
+  font-size: clamp(11px, 1.2vw, 18px);
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+.logo {
+  width: 10rem;
+}
+
+#modal__menu .menu-item:hover {
+  color: rgb(210, 50, 62);
+  font-weight: 800;
+  transition: all 0.2s ease;
+}
+
+@media(max-width:1920px) {
+  .swiper-slide {
+    height: 80vh !important;
+  }
+}
+
+
+@media(max-width:1035px) {
+  .swiper-slide {
+    height: 80vh !important;
+  }
+}
+
+
+@media(max-width:1024px) {
+  .swiper-slide {
+    height: 84vh !important;
+  }
+}
+
+@media(max-width:971px) {
+  .swiper-slide {
+    height: 74vh !important;
+  }
+}
+
+@media(max-width:769px) {
+  .swiper-slide {
+    height: 70vh !important;
+  }
+}
+
+@media(max-width:769px) {
+  .swiper-slide {
+    height: 70vh !important;
+  }
+}
+
+@media(max-width:663px) {
+  .swiper-slide {
+    height: 76vh !important;
+  }
+}
+
+
+@media(max-width:1920px) {
+  .new__item--button {
+    bottom: 0px;
+  }
+}
+
+
+.sale__item--heigth .woocommerce-variation.single_variation:first-of-type {
+  padding-top: 10px;
+}
+
+.pa_amount-label {
+  font-size: 13px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 1px solid #333;
+  overflow: hidden;
+}
+
+.checked.pa_amount-label {
+  border: 2px solid rgb(0, 0, 0);
+  opacity: 1;
+}
+
+.variable-item.radio-variable-item {
+  /* border-radius: 100%;
+  line-height: 1;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #9ca3af; */
+}
+
+/* .products.columns-3 .wvs-archive-product-wrapper.product.type-product  .variations .woo-variation-items-wrapper:nth-of-type(2) {
+  order: -1;
+} */
+
+
 
 .products.columns-3 {
   display: flex;
@@ -15,6 +113,7 @@ Version: 1.0
 
 .woocommerce ul.products.columns-3 li.product, .woocommerce-page ul.products.columns-3 li.product {
   display: grid;
+  padding-left: 10px;
 }
 
 
@@ -24,6 +123,25 @@ Version: 1.0
 .product.type-product.post-997.status-publish.product_cat-disign.has-post-thumbnail.shipping-taxable.purchasable.product-type-simple .wrapper_shop {
   display: inline-flex !important;
   justify-content: end !important;
+}
+
+.product.type-product.status-publish.instock.product_cat-disign.has-post-thumbnail.shipping-taxable.purchasable.product-type-simple .wrapper_shop {
+  display: inline-flex !important;
+  justify-content: end !important;
+}
+
+@media (max-width:500px) {
+  .woocommerce ul.products.columns-3 li.product, .woocommerce-page ul.products.columns-3 li.product {
+    display: grid;
+    width: 90% !important;
+  }
+}
+
+@media (max-width:425px) {
+  .woocommerce ul.products.columns-3 li.product, .woocommerce-page ul.products.columns-3 li.product {
+    display: grid;
+    width: 96% !important;
+  }
 }
 
 .sale__item--heigth {
@@ -810,7 +928,7 @@ input[type=number] {
   background-color: inherit;
   padding-top: 12px;
   padding-bottom: 12px;
-  width: 10px;
+  width: 23px;
   text-align: center;
 }
 
@@ -1100,12 +1218,13 @@ input[type=number] {
 }
 
 .mobile-menu {
+  width: 100%;
   margin: 6px;
   opacity: 0;
   visibility: hidden;
   border-radius: 6px;
   position: fixed;
-  top:12%;
+  top:8%;
   left: 0%;
   padding: 20px;
   overflow: auto;
@@ -2829,7 +2948,7 @@ h2, h3 {
 }
 
 .scroll-top {
-  background-color: rgb(210, 50, 62);
+  background-color: rgb(219 210 211);
 }
 
 .arrow {

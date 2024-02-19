@@ -27,12 +27,12 @@
                         
                     </div>
 
-                    <a href="/"><img class="m-auto w-28 flex esm:flex sm:hidden md:hidden" src="<?php echo get_template_directory_uri() . '/src/img/logo.png'; ?>" alt="Logo"></a>
+                    <a href="/"><img class="m-auto logo flex esm:flex sm:hidden md:hidden" src="<?php echo get_template_directory_uri() . '/src/img/logo__mobile.svg'; ?>" alt="Logo"></a>
          
                     
             
                     <div class=" hidden esm:hidden sm:flex md:flex gap-6">
-                        <a href="/"><img class="m-auto w-32 md:w-48" src="<?php echo get_template_directory_uri() . '/src/img/logo.png'; ?>" alt="Logo"></a>
+                        <a href="/"><img class="m-auto w-32 md:w-48" src="<?php echo get_template_directory_uri() . '/src/img/logo.svg'; ?>" alt="Logo"></a>
                         <div class="flex items-center">
                             <div class="relative">
                                 <?php echo do_shortcode('[fibosearch]'); ?>    
@@ -73,7 +73,7 @@
                         
                                 <ul class="pt-2">
                                     <li class="text-bg-black text-[10px] pt-5 font-bold"><address>1-ая рабочая 41 стр. 1, 2 этаж</address></li>
-                                    <li class="text-bg-black text-[10px] pt-5 font-bold"><a href="tel:+79990586241">+7 (999) 058-62-41</a></li>
+                                    <li class="text-bg-black text-[10px] pt-5 font-bold"><a href="tel:+79143247860">+7 914 324-78-60</a></li>
                                     <li class="text-bg-black text-[10px] pt-5 font-bold"><a href="email:kalistratovamalai@mail.ru">kalistratovamalai@mail.ru</a></li>
                                     <li class="text-bg-black text-[10px] pt-5 font-bold"><img src="<?php echo get_template_directory_uri() . '/src/img/icons/insta.svg'; ?>" alt="insta"></li>
                                 </ul>
@@ -125,7 +125,7 @@
                                 'theme_location' => 'modal_menu',
                                 'container' => 'ul',
                                 'menu_class' => 'p-5',
-                                'menu_id' => ''
+                                'menu_id' => 'modal__menu'
                                 ]);
                             ?>
                         </nav>
@@ -152,7 +152,7 @@
                         </div>      
 
                     </div>
-                    <button class="header-wrapper btn__shadow"><img class=" bg-light-gray p-2 rounded-md" src="<?php echo get_template_directory_uri() . '/src/img/icons/search.svg'; ?>" alt="" ></button></li>
+                    <button class="header-wrapper"><img class="  p-2 rounded-md" src="<?php echo get_template_directory_uri() . '/src/img/icons/search.svg'; ?>" alt="" ></button></li>
                     <div class="modal-wrapper w-60 hidden mr-10">
                         <div class="modal-content">
                             <div class="flex items-center">
@@ -261,7 +261,7 @@
                                         'theme_location' => 'modal_menu',
                                         'container' => 'ul',
                                         'menu_class' => 'p-5',
-                                        'menu_id' => ''
+                                        'menu_id' => 'modal__menu'
                                     ]);
                                     ?>
                                 </nav>

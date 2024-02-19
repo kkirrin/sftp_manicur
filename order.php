@@ -31,7 +31,8 @@ Template Name: Доставка и оплата - шаблон
 
             <section class="pb-20 esm:pb-20 sm:pb-32 md:pb-40">
                 <div class="container">
-                    <h2 class="text-bg-black text-2xl esm:text-2xl sm:text-3xl md:text-5xl py-4 esm:py-4 sm:py-4 md:py-5 font-extrabold"> Доставка и оплата</h2> 
+                    <h2 class="text-bg-black text-2xl esm:text-2xl sm:text-3xl md:text-5xl 0 py-10 font-extrabold"> Доставка и оплата</h2> 
+
                     <div class="bg-light-gray py-5 px-10 md:py-14 md:px-28 relative">
                         <ul class="list-disc sm:max-w-md md:max-w-3xl">
                             <li class="font-bold pb-2">Доставка во все регионы РФ (сдэк, деловые линии) </li>

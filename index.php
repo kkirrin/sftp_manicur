@@ -73,7 +73,7 @@ get_header();
                         echo '<a href="' . esc_url( $term_link ) . '">
                             <li class="category-item rounded-md bg-light-gray hover:bg-red transition-all relative  overflow-hidden">
 
-                                <p class="text-bg-black esm:text-sm sm:text-sm md:text-xl p-8 font-black">' . esc_html( $term->name ) . '</p>';
+                                <p class="text-bg-black category__item--title p-8 font-black">' . esc_html( $term->name ) . '</p>';
 
                         if ( $term_thumb_url ) {
                             echo  wp_get_attachment_image( $term_thumb_url, 'thumbnail' );
@@ -219,7 +219,7 @@ get_header();
 
 
                                 echo '
-                                    <div class="flex gap-5 items-center justify-between flex-wrap absolute bottom-0">
+                                    <div class="flex gap-5 items-center justify-between flex-wrap absolute new__item--button">
                                     <div class="quantity buttons_added flex  gap-2 rounded-lg border-2 border-gray px-12 sm:px-20 md:px-6">
                                          <input type="button" value="-" class="minus cursor-pointer">
                                           <input type="number" id="quantity_65c1b90451f5a" class="input-text qty text" name="quantity" value="1" aria-label="Количество товара" size="4" min="1" max="" step="1" placeholder="" inputmode="numeric" autocomplete="off">
