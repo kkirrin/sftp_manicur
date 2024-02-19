@@ -4,13 +4,60 @@ Author: штышву360
 Description: Кастомная тема wordpress для сайта "Твой маникюрный магазин"
 Version: 1.0
 */
+
+/* Кнопка Размещение заказа */
+
+.components-button.wc-block-components-button.wp-element-button.wc-block-components-checkout-place-order-button.contained {
+  color: white;
+  border-radius: 6px;
+  background: rgb(36, 36, 36);
+}
+
+/* Пагинация */
+.woocommerce-pagination .page-numbers {
+  border-radius: 6px;
+  background: rgb(242, 243, 248);
+}
+
+.woocommerce-pagination .page-numbers li{
+  padding: 8px 15px !important;
+  gap: 10px !important;
+}
+
+.related.products .products.columns-4 li.product.type-product {
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+}
+
+
+span .variable-item-span.variable-item-span-button {
+  font-size: 10px !important;
+}
 .related.products .products.columns-4 {
   display: flex;
   flex-wrap: wrap;
 }
 
+.related.products .products.columns-4  li.wvs-archive-product-wrapper   {
+  display: grid;
+}
+
+.related.products .products.columns-4  li.product.type-product   {
+  display: grid;
+}
+
+.related.products .products.columns-4  li > .wrapper_shop {
+  display: grid;
+}
+
+
+.related.products .products.columns-4  li.product-type-simple > .wrapper_shop {
+  display: flex;
+  justify-content: end;
+}
+
 @media(max-width:500px) {
-  .related.products .wvs-archive-product-wrapper.product.type-product.status-publish.first.instock.product_cat-aibi.product_cat-geli_laki.product_cat-_-aibi.product_cat-sale.has-post-thumbnail.shipping-taxable.purchasable.product-type-variable {
+  .related.products .woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product {
     width: 90%;
   }
 }
@@ -138,13 +185,18 @@ Version: 1.0
 
 
 .product.type-product.post-997.status-publish.product_cat-disign.has-post-thumbnail.shipping-taxable.purchasable.product-type-simple .wrapper_shop {
-  display: inline-flex !important;
-  justify-content: end !important;
+  display: inline-flex;
+  justify-content: end;
 }
 
 .product.type-product.status-publish.instock.product_cat-disign.has-post-thumbnail.shipping-taxable.purchasable.product-type-simple .wrapper_shop {
-  display: inline-flex !important;
-  justify-content: end !important;
+  display: inline-flex;
+  justify-content: end;
+}
+
+.related.products .products.columns-4 .wvs-archive-product-wrapper.product.type-product.has-post-thumbnail.shipping-taxable.purchasable.product-type-variable .wrapper_shop  {
+  display: grid;
+  justify-content: normal;
 }
 
 @media (max-width:500px) {
@@ -645,6 +697,7 @@ th.label {
 
 .woocommerce-breadcrumb {
   padding-left: 10px !important;
+  margin-top: 10px !important;
 }
 
 .wvs-archive-product-wrapper.product.type-product.post-29.status-publish.first.instock.product_cat-geli_laki.has-post-thumbnail.shipping-taxable.purchasable.product-type-variable {
@@ -1164,6 +1217,7 @@ input[type=number] {
 }
 
 .btn__menu--mobile {
+  z-index: 1000;
   --color:  #262626;
   width: 36px;
   height: 36px;
