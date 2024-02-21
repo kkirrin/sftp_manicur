@@ -2,12 +2,14 @@
             <div class="container flex flex-col md:flex-row items-center justify-between">
                 <a href="/"><img class="h-16 mb-4 md:mb-0 hidden esm:hidden sm:block md:block" src="<?php echo get_template_directory_uri() . '/src/img/logo__light.svg'; ?>" alt="Logo"></a>
         
-                <ul class="text-white text-xs mb-4 md:mb-0 flex flex-col items-center esm:block sm:hidden md:hidden">
-                    <li class="pb-4">
+                <ul class="logo__small text-white text-xs mb-4 md:mb-0 flex flex-row items-center justify-between esm:flex sm:hidden md:hidden">
+                    <li class="">
                         <a href="/">
-                            <img class="h-16" src="<?php echo get_template_directory_uri() . '/src/img/logo__light.svg'; ?>" alt="Logo">
+                            <img src="<?php echo get_template_directory_uri() . '/src/img/logo__light.svg'; ?>" alt="Logo">
                         </a>
-                    </li>     
+                    </li>   
+                    
+                    <li class="text-bg-black text-[10px]font-bold"><img src="<?php echo get_template_directory_uri() . '/src/img/icons/insta.svg'; ?>" alt="insta"></li>
                 </ul>
 
                 

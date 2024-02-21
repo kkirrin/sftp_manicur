@@ -5,6 +5,20 @@ Description: Кастомная тема wordpress для сайта "Твой �
 Version: 1.0
 */
 
+
+.products.columns-3 .wvs-archive-product-wrapper.product.type-product.product-type-variable .wrapper_shop {
+  align-self: flex-end;
+}
+
+.logo__mobile {
+  width: 115px;
+}
+
+
+.logo__small {
+  align-self: stretch;
+}
+
 /* Кнопка Размещение заказа */
 
 .components-button.wc-block-components-button.wp-element-button.wc-block-components-checkout-place-order-button.contained {
@@ -40,20 +54,28 @@ span .variable-item-span.variable-item-span-button {
 
 .related.products .products.columns-4  li.wvs-archive-product-wrapper   {
   display: grid;
+  align-self: flex-end
 }
 
 .related.products .products.columns-4  li.product.type-product   {
   display: grid;
+  align-self: stretch;
 }
 
 .related.products .products.columns-4  li > .wrapper_shop {
   display: grid;
+  align-self: flex-end
 }
 
 
 .related.products .products.columns-4  li.product-type-simple > .wrapper_shop {
   display: flex;
   justify-content: end;
+}
+
+.products.columns-3 .product.type-product.product-type-simple .wrapper_shop {
+  display: flex !important;
+  justify-content: end !important;
 }
 
 @media(max-width:500px) {
@@ -197,6 +219,7 @@ span .variable-item-span.variable-item-span-button {
 .related.products .products.columns-4 .wvs-archive-product-wrapper.product.type-product.has-post-thumbnail.shipping-taxable.purchasable.product-type-variable .wrapper_shop  {
   display: grid;
   justify-content: normal;
+  
 }
 
 @media (max-width:500px) {
@@ -591,7 +614,7 @@ flex.flex-viewport {
   width: 10px;
   top: 8px;
   right: -10px;
-  background-image: url('src/img/icons/arrow-up.svg');
+  /* background-image: url('src/img/icons/arrow-up.svg'); */
   background-repeat: no-repeat;
   transition: all 0.3s ease;
 }
@@ -2895,11 +2918,10 @@ h2, h3 {
   }
 }
 
-.header-fix {
-  /* background: rgba(20, 19, 19, 0.8); */
+/* .header-fix {
   box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
   padding-bottom: 10px;
-}
+} */
 
 .title {
   /* line-height: 85px !important; */

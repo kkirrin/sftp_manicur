@@ -22,7 +22,9 @@ export const initDropList = () => {
                 content.classList.toggle('is-active');
                 
                 if (currentButton.classList.contains('is-active')) {
-                    content.style.maxHeight = content.scrollHeight + 'px';
+                    
+                    content.style.maxHeight = 'max-content';
+
                 } else {
                     content.style.maxHeight = null;
                 }

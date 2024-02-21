@@ -49,12 +49,12 @@ add_action('wp', 'bbloomer_remove_sidebar_product_pages');
 
 // функция для добавления меню
 function add_menu() {
-    register_nav_menu('mobile', 'навигация sidebar mobile');
+    // register_nav_menu('mobile', 'навигация sidebar mobile');
     register_nav_menu('top', 'главное меню');
     register_nav_menu('top_horizontal_menu', 'верхнее горизонтальное меню');
     register_nav_menu('bottom', 'каталог в футере');
     register_nav_menu('bottom-right', 'навигация в футере');
-    register_nav_menu('sidebar-menu', 'боковое меню в каталоге');
+    register_nav_menu('sidebar-menu', 'каталог');
     register_nav_menu('modal_menu', 'модальное окно меню');
     register_nav_menu('mobile-link', 'мобильное окно ссылки');
 }

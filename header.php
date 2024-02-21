@@ -27,7 +27,7 @@
                         
                     </div>
 
-                    <a href="/"><img class="m-auto logo flex esm:flex sm:hidden md:hidden" src="<?php echo get_template_directory_uri() . '/src/img/logo__mobile.svg'; ?>" alt="Logo"></a>
+                    <a href="/"><img class="m-auto logo__mobile flex esm:flex sm:hidden md:hidden" src="<?php echo get_template_directory_uri() . '/src/img/logo__mobile.svg'; ?>" alt="Logo"></a>
          
                     
             
@@ -297,7 +297,7 @@
                     <!-- Верхнее горизонтальное меню -->
                     <?php
                         wp_nav_menu(array(
-                            'theme_location' => 'top_horizontal_menu',
+                            'theme_location' => 'sidebar-menu',
                             'container' => 'ul',
                             'container_class' => 'gap-4 relative flex justify-start flex-wrap',
                             'menu_class' => 'text-gray flex gap-2 justify-center items-center mr-3',
