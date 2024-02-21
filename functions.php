@@ -131,7 +131,13 @@ add_filter('ngettext', 'translate_text');
 
 function translate_text($translated) {
     $translated = str_ireplace('Похожие товары', 'Это может пригодиться', $translated);
-  return $translated;
+    return $translated; 
+}
+
+function translate_text_2($translated) {
+    $translated = str_ireplace('Clear', 'Очистить', $translated);
+    return $translated;
+
 }
 
 
