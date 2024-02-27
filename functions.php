@@ -127,27 +127,30 @@ function custom_sku_output() {
 
 // меняет текст в "похожих товаров" 
 add_filter('gettext', 'translate_text');
-add_filter('ngettext', 'translate_text');
+add_filter('gettext', 'translate_text_2');
+add_filter('gettext', 'delete_text', 10, 3);
 
-function translate_text($translated) {
-    $translated = str_ireplace('Похожие товары', 'Это может пригодиться', $translated);
-    return $translated; 
-}
-
-function translate_text_2($translated) {
-    $translated = str_ireplace('Clear', 'Очистить', $translated);
+function delete_text($translated, $text, $domain) {
+    if ($text === '(необязательно)') {
+        $translated = '';
+    }
     return $translated;
-
 }
 
+function translate_text($translated2) {
+    $translated2 = str_ireplace('Похожие товары', 'Это может пригодиться', $translated2);
+    return $translated2; 
+}
 
+function translate_text_2($translated3) {
+    $translated3 = str_ireplace('Clear', 'Очистить', $translated3);
+    return $translated3;
+
+}
 
 if (class_exists('WooCommerce')) {
     require_once(get_template_directory() . '/woocommers.php');
 }
-
-
-
 
 
 function wvs_teepro_theme_support() {
@@ -170,7 +173,7 @@ function wvs_teepro_theme_support() {
 add_filter('woocommerce_login_redirect', 'manicure_login_redirect', 25, 2);
 function manicure_login_redirect($redirect, $user)
 {
-    $redirect = site_url('/?page_id=685');
+    $redirect = site_url('/?page_id=9');
     return $redirect;
 }
 

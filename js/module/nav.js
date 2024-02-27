@@ -25,6 +25,8 @@ export const initNav = () => {
     //         body.classList.remove('lock');
     //     });
     // });
+
+
     mobileMenuButton.addEventListener('click', (evt) => {
         evt.preventDefault();
         mobileMenuButton.classList.toggle('active');

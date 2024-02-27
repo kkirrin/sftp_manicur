@@ -5,6 +5,57 @@ Description: Кастомная тема wordpress для сайта "Твой �
 Version: 1.0
 */
 
+@media(max-width: 750px) {
+  .wc-block-components-radio-control__option.wc-block-components-radio-control__option-checked .wc-block-components-radio-control__label-group .wc-block-components-radio-control__label {
+    padding-left: 15px;
+  }
+  
+  .wc-block-components-radio-control__option .wc-block-components-radio-control__option-layout .wc-block-components-radio-control__label-group .wc-block-components-radio-control__label {
+    padding-left: 15px;
+  }
+}
+
+
+.wc-block-components-radio-control .wc-block-formatted-money-amount.wc-block-components-formatted-money-amount {
+  display: none;
+}
+
+.attachment-woocommerce_thumbnail.size-woocommerce_thumbnail.wvs-archive-product-image:hover {
+  border: 1px solid #262626;
+  transition: all 1s ease-in-out;
+  border-radius: 5px;
+}
+
+.new-items-section__img img:hover {
+  border: 1px solid #262626;
+  transition: all 1s ease-in-out;
+}
+
+.new-items-section .added_to_cart.wc-forward {
+  position: absolute;
+  top: -40px;
+}
+
+.wc-block-components-text-input.wc-block-components-address-form__phone {
+  order: 1;
+}
+
+.wc-block-components-text-input.wc-block-components-address-form__address_1 {
+  order: 1;
+}
+
+.wc-block-components-text-input.wc-block-components-address-form__address_2 {
+  order: 1;
+}
+
+.wc-block-components-address-address-wrapper.is-editing .wc-block-components-address-form-wrapper:nth-child(7)  {
+  order: 4;
+}
+
+.wc-block-components-text-input.wc-block-components-address-form__postcode, .wc-block-components-text-input.wc-block-components-address-form__state, .wc-block-components-address-form__country.wc-block-components-country-input {
+  display: none;
+}
+
 
 .products.columns-3 .wvs-archive-product-wrapper.product.type-product.product-type-variable .wrapper_shop {
   align-self: flex-end;

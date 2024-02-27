@@ -10,6 +10,7 @@ import { initDistance } from './module/distance.js';
 import { initNavModal } from "./module/modal.js"
 import { initTab } from "./module/tab.js";
 import { initLk } from "./module/lk.js";
+import { initDeleteText } from "./module/deleteText.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     console.log('подключен скрипт main.js');
@@ -26,7 +27,9 @@ window.addEventListener('DOMContentLoaded', () => {
     initNavModal();
     initDistance();
     initTab();
+    initDeleteText();
     initLk();
+
 
     const swiperSlidesSale = document.querySelectorAll('.swiper-slide-sale');
 
@@ -63,6 +66,6 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    
+      
 
 });

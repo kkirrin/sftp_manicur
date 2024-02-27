@@ -68,7 +68,7 @@
                     <img src="<?php echo get_template_directory_uri() . '/src/img/icons/visa.svg'; ?>" alt="">
                     <img src="<?php echo get_template_directory_uri() . '/src/img/icons/mir.svg'; ?>" alt="">
                 </div>
-                <a href="#" class="text-xs underline">
+                <a href="https://xn--80adtccfljcd2ap1krb.xn--p1ai/?page_id=1240" class="text-xs underline">
                     Политика обработки персональных данных
                 </a>
             </div>    

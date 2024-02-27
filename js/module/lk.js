@@ -1,7 +1,10 @@
 export const initLk = () => {
     const lk = document.querySelector('.lk');
+    const tabs = document.querySelector('._tabs')
+    console.log(tabs)
 
-    if (lk) {
+    if (lk && tabs) {
+        console.log('тут')
         // phone
         const phoneInput = document.querySelector('#reg_shipping_phone');
         const phoneEditButton = document.querySelector('.phone-edit-button');
@@ -42,4 +45,6 @@ export const initLk = () => {
             saveButton3.style.display = 'block';
         });
     }
+
+    
 }
