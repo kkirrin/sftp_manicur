@@ -373,6 +373,21 @@
   text-transform: lowercase;
 }
 
+.catalog-menu .sub-menu {
+  max-height: 0;
+  opacity: 0;
+  will-change: max-height;
+  transform-origin: 0 0;
+  transition: all 0.5s ease;
+  box-sizing: border-box;
+  transform: none;
+  transform-origin: unset;
+  position: static;
+  padding-top: 10px;
+  padding-left: 20px;
+
+}
+
 .sidebar_menu {
   position: absolute;
   top: 30px;

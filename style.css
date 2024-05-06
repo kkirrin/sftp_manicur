@@ -4,6 +4,11 @@ Author: штышву360
 Description: Кастомная тема wordpress для сайта "Твой маникюрный магазин"
 Version: 1.0
 */
+a.button.wc-forward {
+  color: white;
+  border-radius: 6px;
+  background: rgb(36, 36, 36);
+} 
 
 @media(max-width: 750px) {
   .wc-block-components-radio-control__option.wc-block-components-radio-control__option-checked .wc-block-components-radio-control__label-group .wc-block-components-radio-control__label {
