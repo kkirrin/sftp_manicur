@@ -1,6 +1,5 @@
 export const initDropList = () => {
     const dropdownToggles = document.querySelectorAll('#sidebar-menu li');
-    console.log(dropdownToggles)
     
     // Для фильтров
     const dropdownFilter = document.querySelectorAll('.dropListFilter')
@@ -12,12 +11,19 @@ export const initDropList = () => {
         const button = el.querySelector('a');
         const content = el.querySelector('ul');
     
+        // console.log(button);
+        // if (content.length = 0) {
+        //     button.classList.remove("::before")
+        // }
+
         button.addEventListener('click', (evt) => {
+            if (evt.currentTarget.classList.contains('.is-active')) {
+                evt.currentTarget.classList.remove('.is-active');
+            }
             if (content) { 
                 evt.preventDefault();
     
                 const currentButton = evt.currentTarget;
-                console.log(currentButton)
                 currentButton.classList.toggle('is-active');
                 content.classList.toggle('is-active');
                 
@@ -30,6 +36,7 @@ export const initDropList = () => {
                 }
             }
         });
+        
     });
     
 

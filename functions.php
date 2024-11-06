@@ -48,7 +48,8 @@ add_action('wp', 'bbloomer_remove_sidebar_product_pages');
 
 
 // функция для добавления меню
-function add_menu() {
+function add_menu()
+{
     // register_nav_menu('mobile', 'навигация sidebar mobile');
     register_nav_menu('top', 'главное меню');
     register_nav_menu('top_horizontal_menu', 'верхнее горизонтальное меню');
@@ -61,22 +62,22 @@ function add_menu() {
 
 // функция выводит количество товаров в мини корзине
 function minicart_count_after_content()
-    {
-        $items_count = WC()->cart->get_cart_contents_count();
-        $text_label = _n('Item', 'Items', $items_count, 'woocommerce');
-        if ($items_count) {
-            ?>
-    <p class="total item-count">
-        <!-- <strong>
+{
+    $items_count = WC()->cart->get_cart_contents_count();
+    $text_label = _n('Item', 'Items', $items_count, 'woocommerce');
+    if ($items_count) {
+?>
+        <p class="total item-count">
+            <!-- <strong>
                     <?php echo $text_label; ?>:
                 </strong> -->
-        <?php echo $items_count; ?>
-    </p>
+            <?php echo $items_count; ?>
+        </p>
 
-    <?php
-        }
+<?php
+    }
 }
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_short_description', 20 );
+remove_action('woocommerce_single_product_summary', 'woocommerce_short_description', 20);
 
 
 // меняет приоритет вывода короткого описания
@@ -92,9 +93,10 @@ function customize_wc_short_description()
 
 
 
-    add_filter( 'woocommerce_after_shop_loop_item', 'my_show_product_description', 9 );
-        function my_show_product_description() {
-        if ( is_tax( 'product_cat' ) ) {
+add_filter('woocommerce_after_shop_loop_item', 'my_show_product_description', 9);
+function my_show_product_description()
+{
+    if (is_tax('product_cat')) {
         echo '<div class="woo-product-short-desc">' . get_the_excerpt() . '</div>';
     }
 }
@@ -103,49 +105,53 @@ function customize_wc_short_description()
 // Вывод артикла
 add_action('woocommerce_single_product_summary', 'custom_sku_output', 6);
 
-function custom_sku_output() {
+function custom_sku_output()
+{
     global $product;
-    
+
     if ($product && $product->get_sku()) {
         echo '<div class="sku_wrapper pb-4">Артикул: ' . $product->get_sku() . '</div>';
     }
 }
 
-  
-    add_action('woocommerce_single_product_summary', 'custom_desc', 90);
 
-    function custom_desc() {
-        global $product;
-        
-        if ($product) {
-            echo '
+add_action('woocommerce_single_product_summary', 'custom_desc', 90);
+
+function custom_desc()
+{
+    global $product;
+
+    if ($product) {
+        echo '
             <div class="product-accordion">Описание:</div>
-            <div class="product-accordion">'.get_the_excerpt().'</div>
+            <div class="product-accordion">' . get_the_excerpt() . '</div>
             ';
-        }
     }
+}
 
 // меняет текст в "похожих товаров" 
 add_filter('gettext', 'translate_text');
 add_filter('gettext', 'translate_text_2');
 add_filter('gettext', 'delete_text', 10, 3);
 
-function delete_text($translated, $text, $domain) {
+function delete_text($translated, $text, $domain)
+{
     if ($text === '(необязательно)') {
         $translated = '';
     }
     return $translated;
 }
 
-function translate_text($translated2) {
+function translate_text($translated2)
+{
     $translated2 = str_ireplace('Похожие товары', 'Это может пригодиться', $translated2);
-    return $translated2; 
+    return $translated2;
 }
 
-function translate_text_2($translated3) {
+function translate_text_2($translated3)
+{
     $translated3 = str_ireplace('Clear', 'Очистить', $translated3);
     return $translated3;
-
 }
 
 if (class_exists('WooCommerce')) {
@@ -153,19 +159,19 @@ if (class_exists('WooCommerce')) {
 }
 
 
-function wvs_teepro_theme_support() {
-    remove_action( 'woocommerce_after_shop_loop_item', 'wvs_pro_archive_variation_template', 30 );
-    remove_action( 'woocommerce_after_shop_loop_item', 'wvs_pro_archive_variation_template', 7 );
-    
-                    
-    add_filter( 'woo_variation_swatches_archive_add_to_cart_select_options', function () {
-        return '<i></i><span class="tooltip">' . __( 'Select options', 'woocommerce' ) . '</span>';
-    } );
-    
-    add_filter( 'woo_variation_swatches_archive_add_to_cart_text', function () {
-        return '<i></i><span class="tooltip">' . __( 'Add to cart', 'woocommerce' ) . '</span>';
-    } );
+function wvs_teepro_theme_support()
+{
+    remove_action('woocommerce_after_shop_loop_item', 'wvs_pro_archive_variation_template', 30);
+    remove_action('woocommerce_after_shop_loop_item', 'wvs_pro_archive_variation_template', 7);
 
+
+    add_filter('woo_variation_swatches_archive_add_to_cart_select_options', function () {
+        return '<i></i><span class="tooltip">' . __('Select options', 'woocommerce') . '</span>';
+    });
+
+    add_filter('woo_variation_swatches_archive_add_to_cart_text', function () {
+        return '<i></i><span class="tooltip">' . __('Add to cart', 'woocommerce') . '</span>';
+    });
 }
 
 
@@ -177,4 +183,18 @@ function manicure_login_redirect($redirect, $user)
     return $redirect;
 }
 
-add_action( 'init', 'wvs_teepro_theme_support' );
+add_action('init', 'wvs_teepro_theme_support');
+
+
+// add_filter('excerpt_length', '__return_false');
+// add_filter('excerpt_more', '__return_false');
+
+
+
+add_filter('woocommerce_short_description_length', function ($length) {
+    return 0; // Удаление ограничения
+});
+
+/**
+ * Управление длиной полного описания товара в WooCommerce.
+ */

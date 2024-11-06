@@ -1,6 +1,5 @@
 export const initPopup = () => {
     const popupLinks = document.querySelectorAll('.popup-link');
-    console.log(popupLinks)
     const body = document.querySelector('body');
     const lockPadding = document.querySelectorAll(".lock-padding");
     let unlock = true;

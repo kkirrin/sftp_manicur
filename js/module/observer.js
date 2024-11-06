@@ -1,6 +1,5 @@
 export const initObserver = () => {
     const sections = document.querySelectorAll('.flag'); 
-    console.log(sections);
     if (sections.length) {
         const options = {
             root: null,
@@ -10,7 +9,6 @@ export const initObserver = () => {
 
         sections.forEach(section => {
             const spin = section.querySelector('.wheel');
-            console.log(spin);
 
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {

@@ -1,10 +1,8 @@
 export const initLk = () => {
     const lk = document.querySelector('.lk');
     const tabs = document.querySelector('._tabs')
-    console.log(tabs)
 
     if (lk && tabs) {
-        console.log('тут')
         // phone
         const phoneInput = document.querySelector('#reg_shipping_phone');
         const phoneEditButton = document.querySelector('.phone-edit-button');
